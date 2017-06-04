@@ -8,8 +8,11 @@ def ask_user_and_check_number():
         print('You did not quite get it')
 
 magic_number = [random.randint(0, 9), random.randint(0, 9)]
-chances = 3
-for i in range(chances): # range chances is [0, 1, 2]
-    print("This is {} attempt". format(i + 1))
-    ask_user_and_check_number()
 
+def run_programme_x_time(chances):
+    for i in range(chances): # range chances is [0, 1, 2]
+        print("This is {} attempt". format(i + 1))
+        ask_user_and_check_number()
+
+chances = int(input("Enter the number of chances: "))
+run_programme_x_time(chances)
