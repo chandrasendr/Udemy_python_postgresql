@@ -10,7 +10,7 @@ def menu():
     
     # Print out the winnings
     winnings = player_number.intersection(lottery_number)
-    print("You won ${}!".format(100 ** len(winnings)))
+    print("You matched {}. You won €{}!".format(winnings, 100 ** len(winnings)))
 
 # Step:1 User can pick 6 numbers
 def get_player_numbers():
