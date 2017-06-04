@@ -13,9 +13,9 @@ def get_player_numbers():
 # Lottery calculates 6 random numbes (between 1 and 20)
 def create_lottery_numbers():
     values = set() # We cannot initialize an empty set like so: {}
-    for index in range(6): # Range in [0, 1, 2, 3, 4, 5]
+    while len(values) < 6: # Range in [0, 1, 2, 3, 4, 5]
         values.add(random.randint(1, 20))
-        return values
+    return values
     
     
 
