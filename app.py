@@ -51,16 +51,24 @@ def menu():
     selection = input("Enter 'p' to print the student list, "
                       "'s' to add new student, "
                       "'a' to add mark to student, or "
-                      "'q' to quit")
-    if selection == 'p':
-        print_student_list(student_list)
-    elif selection == 's':
-        student_list.append(create_student())
-    elif selection == 'a':
-        student_id = int(input("Enter a student ID to add a mark to: "))
-        student = student_list[student_id]
-        new_mark = int(input("Enter the new mark to be added: "))
-        add_mark(student, new_mark)
+                      "'q' to quit. "
+                      "Enter your selection: ")
+    while selection != 'q':
+        if selection == 'p':
+            print_student_list(student_list)
+        elif selection == 's':
+            student_list.append(create_student())
+        elif selection == 'a':
+            student_id = int(input("Enter a student ID to add a mark to: "))
+            student = student_list[student_id]
+            new_mark = int(input("Enter the new mark to be added: "))
+            add_mark(student, new_mark)
+
+        selection = input("Enter 'p' to print the student list, "
+                          "'s' to add new student, "
+                          "'a' to add mark to student, or "
+                          "'q' to quit "
+                          "Enter your selection: ")
 
 menu()
 
