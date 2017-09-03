@@ -1,40 +1,37 @@
 student_list = []
 
 
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.marks = []
+
+    def average_mark(self):
+        number = len(self.marks)
+        # What happens if the students have no marks yet?
+        if number == 0:
+            return 0
+        total = sum(self.marks)
+        return total / number
+
+
 def create_student():
-    # Ask user for students name
-    # Create the dictionary in the format {'name': '<student_name>', 'marks': []}
-    # Return that dictionary
     name = input('Enter the student name: ')
-    student_data = {
-        'name': name,
-        'marks': []
-    }
+    student_data = Student(name)
 
     return student_data
 
 
 def add_mark(student, mark):
-    # Append a mark to the student dictionary
-    student['marks'].append(mark)
+    # Append a mark to the student object
+    student.marks.append(mark)
     return None
 
 
-def calculate_avg_marks(student):
-    # Add together all the students marks
-    # Divide them by total number of marks
-    number = len(student['marks'])
-    # What happens if the students have no marks yet?
-    if number == 0:
-        return 0
-    total = sum(student['marks'])
-    return total / number
-
-
 def print_student_details(student):
-    # Print out a string that tells user important informationabout this student
-    print('{}, average mark: {}'. format(student['name'],
-                                         calculate_avg_marks(student)))
+    # Print out a string that tells user important information about this student
+    print('{}, average mark: {}'. format(student.name,
+                                         student.average_mark()))
 
 
 def print_student_list(students):
